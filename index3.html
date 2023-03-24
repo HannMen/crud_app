@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elephant Institute</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link href="./styles/style3.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+  <main class="main">
+    
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="./assets/Images/logo-elephant-institute.png" alt="logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cerrar Sesión</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container mt-5">
+      <section class="row">
+        <article class="col">
+          <form>
+            <div class="banner-form">
+              <h2 class="text-center">¿Quieres recibir una clase gratis?</h2>
+              <p class="lead text-center">Regístrate con tu correo y conoce nuestra metodología y profesores.</p>
+              <form class="row g-2 justify-content-center align-items-center">
+                <div class="col-auto">
+                  <label class="visually-hidden" for="emailInput">Email</label>
+                  <input type="email" class="form-control" id="emailInput" placeholder="Ingresa tu correo electrónico">
+                </div>
+                <br>
+                <div class="col-auto">
+                  <label class="visually-hidden" for="telInput">Phone Number</label>
+                  <input type="tel" class="form-control" id="telInput" placeholder="Ingresa tu número telefónico">
+                </div>
+              </form>
+            </div>
+            <br>
+            <button type="button" class="btn btn-success" onclick="agregarProspecto()">
+              Agregar
+            </button>
+            <button type="button" class="btn btn-info" onclick="mostrarProspecto()">
+              Mostrar
+            </button>
+          </form>
+        </article>
+        <article>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+              </tr>
+            </thead>
+            <tbody id="cuerpoTabla"></tbody>
+          </table>
+        </article>
+      </section>
+    </div>
+
+    <footer class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <p class="text-center text-md-start">&copy;2023 Elephant Institute. Todos los derechos reservados.</p>
+          </div>
+          <div class="col-12 col-md-6">
+            <ul class="list-inline text-center text-md-end">
+              <li class="list-inline-item"><a href="https://www.facebook.com/elephantinstituteCol/" target="_blank"><i
+                    class="bi bi-facebook"></i></a></li>
+            </ul>
+          </div> 
+        </div>
+      </div>
+    </footer>
+
+  </main>
+  <script src="./js/app3.js"></script>
+</body>
+
+</html>
