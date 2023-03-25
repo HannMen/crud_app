@@ -26,22 +26,29 @@ const mostrarProspecto = () => {
             <td>${prospecto.email}</td>
             <td>${prospecto.tel}</td>
             <td>
-            <a href="#editEmployeeModal" class="edit" data-toggle="modal" onclick="editarProspecto('${prospecto.id}')"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal" onclick="eliminarProspecto('${prospecto.id}')"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+            <a href="#editEmployeeModal" class="btn btn-warning" data-toggle="modal" onclick="editarProspecto('${prospecto.id}')"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a></td>
+            <td>
+            <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal" onclick="eliminarProspecto('${prospecto.id}')"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
             </td>
     </tr>`;
   }); 
 };
 
+const eliminarProspecto = (id) => {
+  prospectos.forEach((prospecto, index) => {
+    if (prospecto.id === id) {
+      prospectos.splice(index, 1);
+    }
+  });
+  localStorage.setItem("prospectos", JSON.stringify(prospectos));
+  mostrarProspecto();
+};
+
+
 const editarProspecto = (id) => {
   const prospectoIndex = prospectos.findIndex(
     (prospecto) => prospecto.id === id
   );
-
-  if (prospectoIndex === -1) {
-    console.log(`No se encontró el prospecto con ID ${id}.`);
-    return;
-  }
 
   const nuevoEmail = prompt(
     `Ingresa el nuevo correo electrónico para el prospecto con ID ${id}:`,
@@ -61,12 +68,5 @@ const editarProspecto = (id) => {
   mostrarProspecto();
 };
 
-const eliminarProspecto = (id) => {
-  prospectos.forEach((prospecto, index) => {
-    if (prospecto.id === id) {
-      prospectos.splice(index, 1);
-    }
-  });
-  localStorage.setItem("prospectos", JSON.stringify(prospectos));
-  mostrarProspecto();
-};
+window.addEventListener("load", mostrarProspecto)
+// mostrarProspecto(); 
