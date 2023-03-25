@@ -18,9 +18,16 @@
   
   }
 
-  
+  .buttons {
+    margin-bottom: 25px;
+    display:flex;
+    flex-direction:row;
+    justify-content: right;
+  }
+
   .btn-success {
     background-color: #f1ff6e;
+    margin-right: 10px;
   }
 
   .btn-info {
