@@ -27,21 +27,9 @@
     background-color: #2054ff;
   }
 
-  .table {
-    height: 100%;
-    position: relative;
-  }
 
-  .tbody {
-    height: calc(100% - 40px); 
-    display: block;
-    overflow-y: auto;
-  }
-  
-  .tfoot {
-    height: 40px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+} 
